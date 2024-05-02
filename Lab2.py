@@ -33,11 +33,9 @@ def find_min_max(y):
             large = i
     small = y[0]
     for s in y:
-        if small>s:
-            s=s
-        elif s > small:
-            s = small
-    value = [large, s]
+        if small>=s:
+            small = s
+    value = [large, small]
     return value
     
 
