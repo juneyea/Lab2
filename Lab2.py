@@ -7,9 +7,11 @@ def main():
         num_list = get_user_input()
         maxi = find_min_max(num_list)
         avg = calc_average(num_list)
+        skib = calc_median_temperature(num_list)
         print ("These are the Maximum and Minimum values respectively " + str(maxi))
         print ("This is the average of all the values " + str(avg))
-        p= p + 1
+        print ("This is the Median value " + str(skib))
+        p = p + 1
     
 
 def display_main_menu():
@@ -35,10 +37,21 @@ def find_min_max(y):
     for s in y:
         if small>=s:
             small = s
-    value = [large, small]
+    value = [large,small]
     return value
-    
 
+def calc_median_temperature(y):
+    t = int(len(y))
+    valuenew = 0
+    new = (t+1)/2
+    if new%1 == True:
+        new = int(new)
+        valuenew = (y[new] + y[new+1])/2
+    else:
+        new = int(new)
+        valuenew = y[new]
+
+    return valuenew
 
 if __name__ == "__main__":
     main()
