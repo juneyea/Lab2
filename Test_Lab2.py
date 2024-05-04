@@ -11,4 +11,11 @@ def test_calc_average():
     assert result == 5.0
 
 def test_calc_median_temperature():
-    y=0
+    y= [2,4,6,8,10]
+    result = test.calc_median_temperature(y)   
+    assert result == 6
+
+def test_calc_median_temperature_odd():
+    y= [2,4,6,8,10,12]
+    result = test.calc_median_temperature(y)   
+    assert result == 7

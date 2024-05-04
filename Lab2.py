@@ -42,15 +42,14 @@ def find_min_max(y):
 
 def calc_median_temperature(y):
     t = int(len(y))
-    valuenew = 0
     new = (t+1)/2
-    if new%1 == True:
+    if t%2 == 0:
         new = int(new)
-        valuenew = (y[new] + y[new+1])/2
+        valuenew = (y[new-1] + y[new])/2
     else:
         new = int(new)
-        valuenew = y[new]
-
+        valuenew = y[new-1]
+    
     return valuenew
 
 if __name__ == "__main__":
